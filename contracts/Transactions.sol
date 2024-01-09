@@ -16,7 +16,9 @@ contract Transactions {
         string phoneNumber,
         string deliveryAddress,
         uint256 paymentMethod,
-        string items
+        string items,
+        string userId,
+        string orderStatus
     );
 
     struct OrderStruct {
@@ -28,6 +30,8 @@ contract Transactions {
         string deliveryAddress;
         uint256 paymentMethod;
         string items;
+        string userId;
+        string orderStatus;
     }
 
     OrderStruct[] orders;
@@ -38,7 +42,9 @@ contract Transactions {
         string memory phoneNumber,
         string memory deliveryAddress,
         uint256 paymentMethod,
-        string memory items
+        string memory items,
+        string memory userId,
+        string memory orderStatus
     ) public {
         transactionCount += 1;
 
@@ -51,7 +57,9 @@ contract Transactions {
                 phoneNumber,
                 deliveryAddress,
                 paymentMethod,
-                items
+                items,
+                userId,
+                orderStatus
             )
         );
 
@@ -63,7 +71,9 @@ contract Transactions {
             phoneNumber,
             deliveryAddress,
             paymentMethod,
-            items
+            items,
+            userId,
+            orderStatus
         );
     }
 
@@ -74,5 +84,4 @@ contract Transactions {
     function getTransactionCount() public view returns (uint256) {
         return transactionCount;
     }
-    
 }
